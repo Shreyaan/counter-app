@@ -1,44 +1,31 @@
-// document.getElementById("count-el").innerText = 5
-
-// change the count-el in the HTML to reflect the new count
-
-// camelCase
+// 1. Grab the save-el paragrah and store it in a variable called saveEl
 let countEl = document.getElementById("count-el")
-
-
 let count = 0
 
+let saveEl = document.getElementById("save-el") 
+
 function increment() {
-    count = count + 1
-    countEl.innerText = count
-}
-function reset() {
-    count = 0
+    count += 1
     countEl.innerText = count
 }
 let i = 1;
-
-function hatetrb() {
-    // count = 0
-  
-i++;  
-
-    if (i%2 == 0) {
-        document.getElementById("hatetrb").innerText = 'hate trb'
+function save() {
+    // 2. Create a variable that contains both the count and the dash separator, i.e. "12 - "
+    // 3. Render the variable in the saveEl using innerText
+    // NB: Make sure to not delete the existing content of the paragraph
+if (i == 1){
+saveCount = count  ;
     }
-    else
-    {
-
-        document.getElementById("hatetrb").innerHTML = ' <span style="visibility: hidden;"> hatetrb </span>'
+    else{
+saveCount =   " - " + count ;
+        
     }
+    i++;
     
-
-    // countEl.innerText = "hate trb"
+saveEl.innerHTML += saveCount;
+    console.log(saveCount)
+count = 0;
+ countEl.innerText = count
 }
 
-
-function newFunction(i) {
-    i++
-    return i
-}
 
