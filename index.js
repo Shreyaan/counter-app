@@ -2,7 +2,7 @@
 let countEl = document.getElementById("count-el")
 let count = 0
 
-let saveEl = document.getElementById("save-el") 
+let saveEl = document.getElementById("save-el")
 
 function increment() {
     count += 1
@@ -13,6 +13,7 @@ let i = 1;
 function bruhclear() {
     saveEl.innerHTML = "Previous entires: ";
     countEl.innerText = "0";
+    i = 1;
 
 
 }
@@ -22,27 +23,28 @@ function save() {
     // 3. Render the variable in the saveEl using innerText
     // NB: Make sure to not delete the existing content of the paragraph
 
-    if(count== 0){
+    if (count == 0) {
 
-        saveEl.innerHTML += " - 🙄";
+        if (i == 1) {
+            saveEl.innerHTML += "🙄  ";
+        } else {
+            saveEl.innerHTML += " - 🙄  ";
+        }
+
         i++;
-    }
-else{
+    } else {
 
-    if (i == 1){
-        saveCount = count  ;
+        if (i == 1) {
+            saveCount = count;
+        } else {
+            saveCount = " - " + count;
+
+        }
+        i++;
+
+        saveEl.innerHTML += saveCount;
+        console.log(saveCount)
     }
-    else{
-        saveCount =   " - " + count ;
-        
-    }
-    i++;
-    
-    saveEl.innerHTML += saveCount;
-    console.log(saveCount)
+    count = 0;
+    countEl.innerText = count
 }
-count = 0;
-countEl.innerText = count
-}
-
-
