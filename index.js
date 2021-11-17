@@ -9,6 +9,14 @@ function increment() {
     countEl.innerText = count
 }
 let i = 1;
+
+function bruhclear() {
+    saveEl.innerHTML = "Previous entires: ";
+    countEl.innerText = "0";
+
+
+}
+
 function save() {
     // 2. Create a variable that contains both the count and the dash separator, i.e. "12 - "
     // 3. Render the variable in the saveEl using innerText
@@ -17,6 +25,7 @@ function save() {
     if(count== 0){
 
         saveEl.innerHTML += " - 🙄";
+        i++;
     }
 else{
 
@@ -33,7 +42,7 @@ else{
     console.log(saveCount)
 }
 count = 0;
- countEl.innerText = count
+countEl.innerText = count
 }
 
 
