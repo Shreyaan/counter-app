@@ -13,17 +13,25 @@ function save() {
     // 2. Create a variable that contains both the count and the dash separator, i.e. "12 - "
     // 3. Render the variable in the saveEl using innerText
     // NB: Make sure to not delete the existing content of the paragraph
-if (i == 1){
-saveCount = count  ;
+
+    if(count== 0){
+
+        saveEl.innerHTML += " - 🙄";
+    }
+else{
+
+    if (i == 1){
+        saveCount = count  ;
     }
     else{
-saveCount =   " - " + count ;
+        saveCount =   " - " + count ;
         
     }
     i++;
     
-saveEl.innerHTML += saveCount;
+    saveEl.innerHTML += saveCount;
     console.log(saveCount)
+}
 count = 0;
  countEl.innerText = count
 }
