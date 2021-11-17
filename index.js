@@ -92,7 +92,7 @@ function clearSab(){
     saveEl.innerHTML = "Previous entires: ";
     countEl.innerText = "0";
     i = 1; 
-    wasClearUsed = true;
+    // wasClearUsed = true;
     localStorage.setItem('saveEl', saveEl.innerHTML);
     localStorage.setItem('number', i);
 
