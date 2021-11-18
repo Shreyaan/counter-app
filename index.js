@@ -1,6 +1,12 @@
 // 1. Grab the save-el paragrah and store it in a variable called saveEl
 let countEl = document.getElementById("count-el")
 let count = 0
+let totalCount = 0;
+if (totalCount != null) {
+         
+    totalCount= localStorage.getItem('total', totalCount);   
+ } 
+ document.getElementById('total').innerText= totalCount
 
 let saveEl = document.getElementById("save-el")
 let oldtext = localStorage.getItem('saveEl')
@@ -14,8 +20,12 @@ if (oldtext == null) {
 
 function increment() {
     count += 1
+
     countEl.innerText = count
 }
+
+
+
 let i;
 
 if (localStorage.getItem('number') != null) {
@@ -81,10 +91,22 @@ function save() {
 
         console.log(saveCount)
     }
+     if (totalCount != null) {
+         
+        totalCount = parseInt(totalCount, 10);
+
+     } 
+    totalCount += count;
+    totalCount = parseInt(totalCount, 10);
     count = 0;
+
     countEl.innerText = count
     localStorage.setItem('saveEl', saveEl.innerHTML);
     localStorage.setItem('number', i);
+    localStorage.setItem("total", totalCount);
+
+
+    document.getElementById('total').innerText= totalCount
 }
 
 
