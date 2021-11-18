@@ -41,6 +41,7 @@ function bruhclear() {
     countEl.innerText = "0";
     // i = 1; dont need anymore coz we now save last data
     wasClearUsed = true;
+    count = 0;
 
 }
 
